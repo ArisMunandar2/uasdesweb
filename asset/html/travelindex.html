@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel</title>
+    <link rel="stylesheet" href="../css/travelstyle.css" />
+  </head>
+  <body>
+    <nav>
+      <link rel="stylesheet" href="/asset/css/header.css" />
+      <div class="main_container">
+        <div class="menu">GADGET</div>
+        <div class="menu">TRAVEL</div>
+        <div class="menu">FNB</div>
+        <div class="menu">FASHION</div>
+        <div class="menu">MUSIK</div>
+
+        <img src="../img/profilheader.png" alt="profile" />
+        <a href="/index.html">
+          <img src="../img/logo life-01.png" alt="logolife" />
+        </a>
+      </div>
+    </nav>
+    <section class="utama">
+      <div class="kiri">
+        <img
+          id="ads-atas"
+          src="../img/travel/ads verti.png"
+          alt="ads travel verti"
+        />
+        <h2 id="judul-kategori">Artikel Terkait</h2>
+
+        <a href="travelindex.html?id=travel2">
+          <div class="other-articles">
+            <img
+              class="other-article-photo"
+              src="../img/travel/pantaipik.png"
+              alt="pantai pik"
+            />
+            <h4 class="caption-artikel-lain">
+              4 Aktivitas di Aloha Pasir Putih PIK 2, Boleh Bawa Hewan
+              Peliharaan
+            </h4>
+          </div>
+        </a>
+
+        <a href="travelindex.html?id=travel3">
+          <div class="other-articles">
+            <img
+              class="other-article-photo"
+              src="../img/travel/labuan bajo.png"
+              alt="labuan bajo"
+            />
+            <h4 class="caption-artikel-lain">
+              9 Wisata Pantai Labuan Bajo NTT, Ada Waecicu dan Long Beach
+            </h4>
+          </div>
+        </a>
+        <a href="travelindex.html?id=travel4">
+          <div class="other-articles">
+            <img
+              class="other-article-photo"
+              src="../img/travel/jalan kopi malang.png"
+              alt="malang"
+            />
+            <h4 class="caption-artikel-lain">
+              Sensasi Nongkrong Ditemani Kereta di Selak Kopi Malang, Seperti di
+              Vietnam
+            </h4>
+          </div>
+        </a>
+        <a href="travelindex.html?id=travel5">
+          <div class="other-articles">
+            <img
+              class="other-article-photo"
+              src="../img/travel/pantaipik.png"
+              alt="pantai pasir putih"
+            />
+            <h4 class="caption-artikel-lain">
+              Wisata PIK 2 Terbaru, Area Kuliner dan Pantai Pasir Putih ala
+              Hawaii
+            </h4>
+          </div>
+        </a>
+      </div>
+
+      <div class="kanan">
+        <h1 id="judul-artikel"></h1>
+        <img
+          id="main-article-photo"
+          src="../img/travel/borobudur.jpeg"
+          alt="borobudur"
+        />
+        <h3 id="tanggal-editor"></h3>
+        <p class="text-artikel"></p>
+      </div>
+    </section>
+    <section class="ads">
+      <img
+        id="ads-bawah"
+        src="../img/travel/ads horiz.png"
+        alt="ads travel mendatar"
+      />
+    </section>
+    <section class="contact">
+      <div class="kirifooter">
+        <img id="logofooter" src="../img/footer/logoweb.png" alt="logoweb" />
+        <div class="search_container">
+          <input
+            type="email"
+            placeholder="Subscribe to our newsletter"
+            class="searchbar"
+          />
+          <button id="search_button">
+            <img id="search" src="../img/search logo.png" alt="search icon" />
+          </button>
+        </div>
+      </div>
+      <div class="kananfooter">
+        <span>
+          <div class="logoklik">
+            <a href="https://twitter.com"
+              ><img src="../img/logotwt.png" alt="logo twitter"
+            /></a>
+          </div>
+          <div class="logoklik">
+            <a href="https://www.instagram.com"
+              ><img src="../img/logoIG.png" alt="logo instagram"
+            /></a>
+          </div>
+          <div class="logoklik">
+            <a href="https://www.facebook.com"
+              ><img src="../img/logoFb_.png" alt="logo fb"
+            /></a>
+          </div>
+          <div class="logoklik">
+            <a href="https://www.youtube.com"
+              ><img src="../img/logoyt.png" alt="logo yt"
+            /></a>
+          </div>
+        </span>
+        <p>
+          Jakarta | About Us | Advertise | Privacy Policy | Career| Contact Us
+        </p>
+        <p>
+          Copyright 2023 - 2027 | PT UPH Bersahabat (Indo Media). All Right
+          Reserved
+        </p>
+        <p>lifestyleku.com</p>
+      </div>
+    </section>
+    <script type="module">
+      import {
+        artikel1,
+        artikel2,
+        artikel3,
+        artikel4,
+        artikel5,
+      } from "../datatravel.js";
+      const title = document.querySelector("title");
+      const judul = document.querySelector("#judul-artikel");
+      const img = document.querySelector("#main-article-photo");
+      const tanggal = document.querySelector("#tanggal-editor");
+      const paragraph = document.querySelector(".text-artikel");
+
+      const ur = new URLSearchParams(window.location.search);
+      let content = ur.get("id");
+
+      switch (content) {
+        case "travel1":
+          title.innerText = "TravelUpdate";
+          judul.innerHTML = artikel1[0];
+          img.src = artikel1[1];
+          tanggal.innerHTML = artikel1[2];
+          paragraph.innerHTML = artikel1[3];
+          break;
+
+        case "travel2":
+          title.innerText = "TravelUpdate";
+          judul.innerHTML = artikel2[0];
+          img.src = artikel2[1];
+          tanggal.innerHTML = artikel2[2];
+          paragraph.innerHTML = artikel2[3];
+          break;
+
+        case "travel3":
+          title.innerText = "TravelUpdate";
+          judul.innerHTML = artikel3[0];
+          img.src = artikel3[1];
+          tanggal.innerHTML = artikel3[2];
+          paragraph.innerHTML = artikel3[3];
+          break;
+
+        case "travel4":
+          title.innerText = "TravelUpdate";
+          judul.innerHTML = artikel4[0];
+          img.src = artikel4[1];
+          tanggal.innerHTML = artikel4[2];
+          paragraph.innerHTML = artikel4[3];
+          break;
+
+        case "travel5":
+          title.innerText = "TravelUpdate";
+          judul.innerHTML = artikel5[0];
+          img.src = artikel5[1];
+          tanggal.innerHTML = artikel5[2];
+          paragraph.innerHTML = artikel5[3];
+          break;
+      }
+    </script>
+  </body>
+</html>

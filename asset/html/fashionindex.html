@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fashion & Beauty</title>
+    <link rel="stylesheet" href="../css/fashionstyle.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="main_container">
+        <div class="menu">GADGET</div>
+        <div class="menu">TRAVEL</div>
+        <div class="menu">FNB</div>
+        <div class="menu">FASHION</div>
+        <div class="menu">MUSIK</div>
+
+        <img src="../img/profilheader.png" alt="profile" />
+
+        <a href="/index.html">
+          <img src="../img/logo life-01.png" alt="logolife" />
+        </a>
+      </div>
+    </nav>
+    <section class="utama">
+      <div class="kiri-atas">
+        <img
+          id="main-article-photo"
+          src="../img/fashion/baju artikel fashion lebaran.jpeg"
+          alt="baju artikel fashion lebaran"
+        />
+        <h1 id="judul-artikel"></h1>
+        <h3 id="tanggal-artikel"></h3>
+        <p class="text-artikel"></p>
+      </div>
+      <div class="kanan-atas">
+        <img
+          id="ads-kananatas"
+          src="../img/fashion/advertisment skyscraper.png"
+          alt="advertisement skyscraper"
+        />
+        <img
+          id="ads-kananatas"
+          src="../img/fashion/advertisment skyscraper.png"
+          alt="advertisement skyscraper"
+        />
+        <img
+          id="ads-kananbawah"
+          src="../img/fashion/web banner lebaran portrait.jpeg"
+          alt="ucapan selamat lebaran"
+        />
+        <img
+          id="ads-kananbawah"
+          src="../img/fashion/web banner lebaran portrait.jpeg"
+          alt="ucapan selamat lebaran"
+        />
+      </div>
+    </section>
+    <h2 id="judul-kategori">Lainnya di Fashion & Beauty</h2>
+    <section class="linked-article">
+      <a href="fashionindex.html?id=fashion2">
+        <div class="other-articles">
+          <img
+            class="other-article-photo"
+            src="../img/fashion/roseallday.png"
+            alt="roseallday"
+          />
+          <h4 class="caption-artikel-lain">
+            Rosé All Day Hadirkan Skin Tint Vegan di Flagship Store PIM 2
+          </h4>
+        </div>
+      </a>
+      <a href="fashionindex.html?id=fashion3">
+        <div class="other-articles">
+          <img
+            class="other-article-photo"
+            src="../img/fashion/vegan.png"
+            alt="vegan"
+          />
+          <h4 class="caption-artikel-lain">
+            Kombinasi Bahan Vegan Dalam Skincare, Bisa Hidrasi Kulit 24 Jam
+          </h4>
+        </div>
+      </a>
+      <a href="fashionindex.html?id=fashion4">
+        <div class="other-articles">
+          <img
+            class="other-article-photo"
+            src="../img/fashion/warna pakaian.png"
+            alt="pakaian"
+          />
+          <h4 class="caption-artikel-lain">
+            Cara Mudah Memilih Warna Pakaian yang Sesuai dengan Rona Kulit
+          </h4>
+        </div>
+      </a>
+      <a href="fashionindex.html?id=fashion5">
+        <div class="other-articles">
+          <img
+            class="other-article-photo"
+            src="../img/fashion/warna warni thumbnail.png"
+            alt="pakaian"
+          />
+          <h4 class="caption-artikel-lain">
+            Warna Pakaian Apakah yang Paling Sejuk untuk Cuaca Panas?
+          </h4>
+        </div>
+      </a>
+    </section>
+    <section class="contact">
+      <div class="kirifooter">
+        <img id="logofooter" src="../img/footer/logoweb.png" alt="logoweb" />
+        <div class="search_container">
+          <input
+            type="email"
+            placeholder="Subscribe to our newsletter"
+            class="searchbar"
+          />
+          <button id="search_button">
+            <img
+              id="search"
+              src="../img/footer/search logo.png"
+              alt="search icon"
+            />
+          </button>
+        </div>
+      </div>
+      <div class="kananfooter">
+        <span>
+          <div class="logoklik">
+            <a href="https://twitter.com"
+              ><img src="../img/logotwt.png" alt="logo twitter"
+            /></a>
+          </div>
+          <div class="logoklik">
+            <a href="https://www.instagram.com"
+              ><img src="../img/footer/logoIG.png" alt="logo instagram"
+            /></a>
+          </div>
+          <div class="logoklik">
+            <a href="https://www.facebook.com"
+              ><img src="../img/footer/logoFb_.png" alt="logo fb"
+            /></a>
+          </div>
+          <div class="logoklik">
+            <a href="https://www.youtube.com"
+              ><img src="../img/logoyt.png" alt="logo yt"
+            /></a>
+          </div>
+        </span>
+        <p>
+          Jakarta | About Us | Advertise | Privacy Policy | Career| Contact Us
+        </p>
+        <p>
+          Copyright 2023 - 2027 | PT UPH Bersahabat (Indo Media). All Right
+          Reserved
+        </p>
+        <p>lifestyleku.com</p>
+      </div>
+    </section>
+    <script type="module">
+      import {
+        artikel1,
+        artikel2,
+        artikel3,
+        artikel4,
+        artikel5,
+      } from "../datafashion.js";
+      const title = document.querySelector("title");
+      const img = document.querySelector("#main-article-photo");
+      const judul = document.querySelector("#judul-artikel");
+      const tanggal = document.querySelector("#tanggal-artikel");
+      const paragraph = document.querySelector(".text-artikel");
+
+      const ur = new URLSearchParams(window.location.search);
+      let content = ur.get("id");
+
+      switch (content) {
+        case "fashion1":
+          title.innerText = "FashionUpdate";
+          img.src = artikel1[0];
+          judul.innerHTML = artikel1[1];
+          tanggal.innerHTML = artikel1[2];
+          paragraph.innerHTML = artikel1[3];
+          break;
+
+        case "fashion2":
+          title.innerText = "FashionUpdate";
+          img.src = artikel2[0];
+          judul.innerHTML = artikel2[1];
+          tanggal.innerHTML = artikel2[2];
+          paragraph.innerHTML = artikel2[3];
+          break;
+
+        case "fashion3":
+          title.innerText = "FashionUpdate";
+          img.src = artikel3[0];
+          judul.innerHTML = artikel3[1];
+          tanggal.innerHTML = artikel3[2];
+          paragraph.innerHTML = artikel3[3];
+          break;
+
+        case "fashion4":
+          title.innerText = "FashionUpdate";
+          img.src = artikel4[0];
+          judul.innerHTML = artikel4[1];
+          tanggal.innerHTML = artikel4[2];
+          paragraph.innerHTML = artikel4[3];
+          break;
+
+        case "fashion5":
+          title.innerText = "FashionUpdate";
+          img.src = artikel5[0];
+          judul.innerHTML = artikel5[1];
+          tanggal.innerHTML = artikel5[2];
+          paragraph.innerHTML = artikel5[3];
+          break;
+      }
+    </script>
+  </body>
+</html>
